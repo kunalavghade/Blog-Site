@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Blog Site - {{post.title}} {% endblock %}
+{% block content %}
+<h1>{{post.title}}</h1>
+
+<small>by {{post.author.first_name}} {{post.author.last_name}} - {{post.post_date}} -{{post.catagory}}
+    {% if user.is_authenticated  %} {% if user.id == p.author.id %}
+    |<a href="{% url 'edit_post' post.pk %}"> Edit Post</a> | <a href="{% url 'delete_post' post.pk %}"> Delete Post</a>
+    {% endif %}
+    {% endif %}
+</small>
+<hr>
+<p>{{post.body | safe}}</p>
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary"> Back</a>
+{% endblock %}

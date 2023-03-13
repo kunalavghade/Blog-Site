@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+{% if user.id == post.author.id %}
+<h1> Delete Blog Post </h1>
+
+<form method="POST"> 
+	{% csrf_token %}
+	<strong>Are You Sure !  </strong><br>  {{post.title}}<hr>
+	<button class="btn btn-secondary"> Yes </button> 
+</form>
+{% endif %}
+
+
+{% else %}
+<h1>Access denied Contact Admin</h1>
+
+{% endif %}
+
+{% endblock %}

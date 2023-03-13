@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Add Blog Catagory </h1>
+
+{% if user.is_authenticated %}
+<form method="POST"> 
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-secondary"> Post </button>
+</form>
+{% else %}
+<h1>Access denied Contact Admin</h1>
+{% endif %}
+
+
+{% endblock %}

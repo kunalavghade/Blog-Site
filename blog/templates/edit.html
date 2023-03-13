@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1> Edit Blog Post </h1>
+{% if user.id == post.author.id %}
+<form method="POST"> 
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-secondary"> Post </button>
+</form>
+{% endif %}
+
+
+{% else %}
+<h1>Access denied Contact Admin</h1>
+
+{% endif %}
+
+{% endblock %}
