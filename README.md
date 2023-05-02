@@ -17,8 +17,8 @@ following are list the web sections:
 
 ## Tech Stack
 
-**Client:** HTML, CSS, JS, bootstrap
+**Client:** HTML, CSS, bootstrap
 
-**Server:** springboot, JPA, spring security, Thymeleaf
+**Server:** Django, sqlite
 
 
